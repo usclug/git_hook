@@ -26,6 +26,17 @@ To run the application, simply call uWSGI and give it the ini file:
 sudo uwsgi --ini githook.ini
 ```
 
+###Testing the Application
+You can test the app locally by running
+```sh
+python githook.py
+```
+
+You can test `POST` commands using `curl`, e.g.
+```sh
+curl -X POST -H "Content-Type: application/json" -d '{"username":"xyz","password":"xyz"}' http://localhost:5000/deploy
+```
+
 ###Nginx Configuration
 ```nginx
 server {
