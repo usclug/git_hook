@@ -8,8 +8,8 @@ This a skeliton git post receive hook using [Python](http://www.python.org/), [F
 sudo aptitude install build-essential python python-pip python-dev
 sudo pip install Flask
 sudo pip install http://projects.unbit.it/downloads/uwsgi-lts.tar.gz
-sudo pip install supervisor
 sudo pip install simplejson
+sudo aptitude install supervisor
 
 
 #Setup Logging directories
