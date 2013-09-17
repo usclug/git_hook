@@ -60,6 +60,22 @@ server {
 }
 ```
 
+###Supervisor Configuration
+[Supervisor](http://supervisord.org/) is an application used to monitor and control your Flask app. Your webserver, for example, is setup to start after a machine crash or reboot. Supervisor will take care to restarting uWSGI and in turn your Flask app.
+
+In debian-based systems, you install application configuration in the `/etc/supervisor/conf.d` directory. The configuration for our `githook` app would look like:
+```conf
+[program:githook]
+command=uwsgi --ini /path/to/githook.ini
+directory=/path/to/githook
+autostart=true
+autorestart=true
+stdout_logfile=/path/to/githook/logs/uwsgi-supervisord.log
+redirect_stderr=true
+stopsignal=QUIT
+```
+
+
 ###References
 The following references were used when developing this hook:
   + http://flask.pocoo.org/docs/tutorial/
