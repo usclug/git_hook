@@ -18,7 +18,7 @@ This a sample hook
 def deploy():
     if request.method == 'POST':
         #app.logger.debug(payload)
-        payload = simplejson.loads(request.data)
+        post_data = simplejson.loads(request.form['payload'])
         return 'Deploy Website'
     else:
         return 'GET request not supported'
